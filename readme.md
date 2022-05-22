@@ -11,5 +11,4 @@
 ### 写点有意思的代码让人快乐
 
 [flappy-bird](https://github.com/wenchaomartin/game/tree/master/flappy-bird)
-
-![flappy-bird](gif\\flappy-bird.gif)
+![flappy-bird](https://github.com/wenchaomartin/game/blob/master/gif/flappy-bird.gif)
