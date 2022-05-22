@@ -37,7 +37,7 @@ function animation(){
     bird.update()
    
     bird.draw()
-    
+    swooshing.play()
     handleParticles()
     hug ++
     frame ++
