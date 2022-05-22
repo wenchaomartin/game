@@ -12,4 +12,4 @@
 
 [flappy-bird](https://github.com/wenchaomartin/game/tree/master/flappy-bird)
 
-![flappy-bird](gif\flappy-bird.gif)
+![flappy-bird](gif\\flappy-bird.gif)
