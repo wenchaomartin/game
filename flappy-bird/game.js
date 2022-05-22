@@ -21,7 +21,7 @@ point.src = 'music/point.wav'
 const hit = document.createElement('audio')
 hit.src = 'music/hit.wav'
 
-const swooshing= document.createElement('audio').muted=false
+const swooshing = document.createElement('audio')
 swooshing.src = 'music/swooshing.wav'
 
 const die = document.createElement('audio')
@@ -37,8 +37,7 @@ function animation(){
     bird.update()
    
     bird.draw()
-
-    swooshing.play()
+    
     handleParticles()
     hug ++
     frame ++

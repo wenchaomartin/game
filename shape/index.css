@@ -1,0 +1,27 @@
+#id-canvas {
+    background-color:black;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+#controller {
+    position:absolute;
+    padding:10px;
+    top :10%;
+    left:10px;
+    border:2px solid ;
+    background:rgba(255, 255, 255, 0.15)
+
+}
+button {
+    width:200px;
+    padding: 10px 40px;
+    font-size:20px
+}
+ label {
+    font-size:20px;
+   
+    color:white
+   
+}
