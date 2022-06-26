@@ -1,1 +1,7 @@
 .vscode/
+
+### Java ###
+# Compiled class file
+*.class
+.idea/
+*.iml
