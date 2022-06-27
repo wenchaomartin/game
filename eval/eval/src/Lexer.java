@@ -1,6 +1,6 @@
 public class Lexer {
     private String src;
-    private String tokenBreak = "()+x";
+    private String tokenBreak = "()+xexp";
 
     public Lexer(String src) {
         this.src = src;

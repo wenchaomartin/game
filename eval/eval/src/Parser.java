@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -32,6 +33,66 @@ public class Parser {
             }
             if (token.equals("sin")) {
                 Node node = new SinNode(parent, "sin", new ArrayList<>(1));
+
+                if (parent != null) {
+                    List<Node> children = parent.getChildren();
+                    children.add(node);
+                }
+
+                token = lexer.next();
+                if (!Objects.equals(token, "(")) {
+                    throw new RuntimeException("expected token (");
+                }
+                parsePrimary(node);
+                token = lexer.next();
+                if (!Objects.equals(token, ")")) {
+                    throw new RuntimeException("expected token )");
+                }
+                return node;
+            }
+
+            if (token.equals("abs")) {
+                Node node = new AbsNode(parent, "abs", new ArrayList<>(1));
+
+                if (parent != null) {
+                    List<Node> children = parent.getChildren();
+                    children.add(node);
+                }
+
+                token = lexer.next();
+                if (!Objects.equals(token, "(")) {
+                    throw new RuntimeException("expected token (");
+                }
+                parsePrimary(node);
+                token = lexer.next();
+                if (!Objects.equals(token, ")")) {
+                    throw new RuntimeException("expected token )");
+                }
+                return node;
+            }
+
+            if (token.equals("tan")) {
+                Node node = new TanNode(parent, "tan", new ArrayList<>(1));
+
+                if (parent != null) {
+                    List<Node> children = parent.getChildren();
+                    children.add(node);
+                }
+
+                token = lexer.next();
+                if (!Objects.equals(token, "(")) {
+                    throw new RuntimeException("expected token (");
+                }
+                parsePrimary(node);
+                token = lexer.next();
+                if (!Objects.equals(token, ")")) {
+                    throw new RuntimeException("expected token )");
+                }
+                return node;
+            }
+
+            if (token.equals("log")) {
+                Node node = new LogNode(parent, "log", new ArrayList<>(1));
 
                 if (parent != null) {
                     List<Node> children = parent.getChildren();
@@ -107,10 +168,15 @@ public class Parser {
 
 
     public static void main(String[] args) {
-        Lexer lexer = new Lexer("1+2x+cos(sin(x))");
-        Parser parser = new Parser(lexer);
-        Node node = parser.parseNode(null);
-        System.out.println(node.eval(Math.PI));
+        List<String> s = Arrays.asList("1+2x+cos(sin(abs(x)))", "1", "2x", "abs(x)", "log(x)");
+        for (String expression : s) {
+
+            Lexer lexer = new Lexer(expression);
+            Parser parser = new Parser(lexer);
+            Node node = parser.parseNode(null);
+            System.out.println("src:= " + expression + ", result: " + node.eval(Math.PI));
+        }
+
     }
 
 

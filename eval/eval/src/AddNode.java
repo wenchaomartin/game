@@ -27,13 +27,6 @@ public class AddNode implements Node {
         return null;
     }
 
-    public static void main(String[] args) {
-        List<String> tokenList = Arrays.asList("3", "+", "5", "+", "6");
-        int current = 0;
-        Node node = add(tokenList);
-        System.out.println(node);
-    }
-
     public static Node add(List<String> tokens) {
         int current = 0;
         Node node = primary(tokens, current);

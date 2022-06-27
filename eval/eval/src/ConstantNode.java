@@ -20,4 +20,9 @@ public class ConstantNode implements Node {
     public Double eval(Double x) {
         return constant;
     }
+
+    @Override
+    public String toString() {
+        return constant.toString();
+    }
 }
