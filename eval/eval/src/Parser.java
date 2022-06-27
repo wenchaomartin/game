@@ -168,7 +168,7 @@ public class Parser {
 
 
     public static void main(String[] args) {
-        List<String> s = Arrays.asList("1+2x+cos(sin(abs(x)))", "1", "2x", "abs(x)", "log(x)");
+        List<String> s = Arrays.asList("1+2x+cos(sin(abs(x)))", "1", "2x", "abs(x)", "log(x)","tan(x)");
         for (String expression : s) {
 
             Lexer lexer = new Lexer(expression);
